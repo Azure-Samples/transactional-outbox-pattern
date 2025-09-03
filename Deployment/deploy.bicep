@@ -164,7 +164,7 @@ resource appi 'Microsoft.Insights/components@2020-02-02' = {
 }
 
 // Storage Account for Azure Function
-resource storageAccount 'Microsoft.Storage/storageAccounts@2023-05-01' = {
+resource storageAccount 'Microsoft.Storage/storageAccounts@2025-01-01' = {
   name: 'st${replace(uniqueString(resourceGroup().id), '-', '')}'
   location: location
   sku: {
