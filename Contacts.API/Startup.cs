@@ -19,6 +19,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using AutoMapper;
 
 namespace Contacts.API;
 
@@ -53,7 +54,7 @@ public class Startup
 
         ContactPartitionKeyProvider partitionKeyProvider = new();
 
-        services.AddAutoMapper(typeof(ContactsProfile));
+        services.AddAutoMapper(cfg => { }, typeof(ContactsProfile));
         services.AddValidatorsFromAssembly(typeof(CreateContactCommandValidator).Assembly);
 
         services.AddSingleton(container)
