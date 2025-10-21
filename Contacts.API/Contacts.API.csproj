@@ -14,7 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.Build" Version="17.10.46" />
+      <PackageReference Include="Microsoft.Build" Version="17.11.48" />
       <ProjectReference Include="..\Contacts.Application\Contacts.Application.csproj" />
       <ProjectReference Include="..\Contacts.Infrastructure\Contacts.Infrastructure.csproj" />
     </ItemGroup>
