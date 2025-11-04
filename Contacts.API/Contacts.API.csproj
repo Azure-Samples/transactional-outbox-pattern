@@ -10,11 +10,11 @@
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
-        <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.54.0" />
+        <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.54.1" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.Build" Version="17.11.48" />
+      <PackageReference Include="Microsoft.Build" Version="17.14.28" />
       <ProjectReference Include="..\Contacts.Application\Contacts.Application.csproj" />
       <ProjectReference Include="..\Contacts.Infrastructure\Contacts.Infrastructure.csproj" />
     </ItemGroup>
