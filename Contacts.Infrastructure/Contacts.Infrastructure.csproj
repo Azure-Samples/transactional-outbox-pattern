@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.54.0" />
+    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.54.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.10" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
