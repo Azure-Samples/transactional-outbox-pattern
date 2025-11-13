@@ -9,12 +9,13 @@ The source code is structured as follows:
 - **Contacts.Application** - Implementation of CQRS pattern using MediatR library, validation and mapping logic
 - **Contacts.API** - RESTful API consuming application logic components
 - **Contacts.EventsProcessor** - Console application using the Change Feed Processor library to read the Cosmos DB change feed and publish domain events to Azure Service Bus
+- **Contacts.EventsConsumer** - Function application consuming the ServiceBus topic / messages
 
 ## Prerequisites
 
 To run the sample application on your local machine, you need to have the following components installed:
 
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [.NET 10.0 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 - [Visual Studio Code](https://code.visualstudio.com/download)
 
 You also need to create some Azure resources:
