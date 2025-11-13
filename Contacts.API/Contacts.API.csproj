@@ -9,7 +9,7 @@
         <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.0" />
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="10.0.0-rc.1.25458.5" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="10.0.1" />
         <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.54.1" />
         <PackageReference Include="Microsoft.Build.Tasks.Core" Version="18.0.2" />
         <PackageReference Include="Microsoft.Build.Utilities.Core" Version="18.0.2" />

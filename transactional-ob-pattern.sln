@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31521.260
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11205.157 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.Domain", "Contacts.Domain\Contacts.Domain.csproj", "{ADE13EF3-41B3-42A3-A707-F60B83E4F275}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.API", "Contacts.API\Contacts.API.csproj", "{1F635FB5-C1B7-4B81-842E-9F20EBF2D7C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.EventsProcessor", "Contacts.EventsProcessor\Contacts.EventsProcessor.csproj", "{DC4148F2-A9D7-469C-8468-74B86E6B065F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.EventsConsumer", "Contacts.EventsConsumer\Contacts.EventsConsumer.csproj", "{3098016D-4F57-43B3-BAFB-75DF2951FA51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{DC4148F2-A9D7-469C-8468-74B86E6B065F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC4148F2-A9D7-469C-8468-74B86E6B065F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC4148F2-A9D7-469C-8468-74B86E6B065F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3098016D-4F57-43B3-BAFB-75DF2951FA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3098016D-4F57-43B3-BAFB-75DF2951FA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3098016D-4F57-43B3-BAFB-75DF2951FA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3098016D-4F57-43B3-BAFB-75DF2951FA51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

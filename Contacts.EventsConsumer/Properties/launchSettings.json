@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Contacts.EventsConsumer": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7049",
+      "launchBrowser": false
+    }
+  }
+}
