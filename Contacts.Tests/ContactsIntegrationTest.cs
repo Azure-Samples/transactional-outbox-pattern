@@ -24,7 +24,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_001_Create_Contact()
+    public async Task Test_001_Create_Contact()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
 
@@ -42,7 +42,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_002_Read_Contact()
+    public async Task Test_002_Read_Contact()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         if (uow != null)
@@ -54,7 +54,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_003_UpdateCompany_Contact()
+    public async Task Test_003_UpdateCompany_Contact()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         if (uow != null)
@@ -71,7 +71,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_004_UpdateName_Contact()
+    public async Task Test_004_UpdateName_Contact()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         if (uow != null)
@@ -87,7 +87,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_005_UpdateDescription_Contact()
+    public async Task Test_005_UpdateDescription_Contact()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         if (uow != null)
@@ -103,7 +103,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_006_UpdateEmail_Contact()
+    public async Task Test_006_UpdateEmail_Contact()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         if (uow != null)
@@ -119,7 +119,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_007_ReadAll_Contacts()
+    public async Task Test_007_ReadAll_Contacts()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         if (uow != null)
@@ -158,7 +158,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_009_Nothing_To_Save()
+    public async Task Test_009_Nothing_To_Save()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
 
@@ -170,7 +170,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_010_Save_Single()
+    public async Task Test_010_Save_Single()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         var ctx = _fixture.Provider.GetService<IContainerContext>();
@@ -204,7 +204,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_011_Save_Single_Unmodified()
+    public async Task Test_011_Save_Single_Unmodified()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         var ctx = _fixture.Provider.GetService<IContainerContext>();
@@ -238,7 +238,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_012_Save_Single_Unmodified_Etag()
+    public async Task Test_012_Save_Single_Unmodified_Etag()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         var ctx = _fixture.Provider.GetService<IContainerContext>();
@@ -274,7 +274,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_013_Read_NotModified_Contact()
+    public async Task Test_013_Read_NotModified_Contact()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         if (uow != null)
@@ -291,7 +291,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_014_MidAir_Collision()
+    public async Task Test_014_MidAir_Collision()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         if (uow != null)
@@ -311,7 +311,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
         
     [Fact]
-    public async void Test_015_Delete_Contact()
+    public async Task Test_015_Delete_Contact()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         if (uow != null)
@@ -323,7 +323,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_016_Update_Single_MidAir_Collision()
+    public async Task Test_016_Update_Single_MidAir_Collision()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         var ctx = _fixture.Provider.GetService<IContainerContext>();
@@ -364,7 +364,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_017_Delete_Single_MidAir_Collision()
+    public async Task Test_017_Delete_Single_MidAir_Collision()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         var ctx = _fixture.Provider.GetService<IContainerContext>();
@@ -406,7 +406,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_018_Update_Single_NotFound()
+    public async Task Test_018_Update_Single_NotFound()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         var ctx = _fixture.Provider.GetService<IContainerContext>();
@@ -449,7 +449,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_019_Create_Single_Conflict()
+    public async Task Test_019_Create_Single_Conflict()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         var ctx = _fixture.Provider.GetService<IContainerContext>();
@@ -490,7 +490,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_020_Delete_Single()
+    public async Task Test_020_Delete_Single()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         var ctx = _fixture.Provider.GetService<IContainerContext>();
@@ -531,7 +531,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_021_Read_Single_NotModified()
+    public async Task Test_021_Read_Single_NotModified()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         var ctx = _fixture.Provider.GetService<IContainerContext>();
@@ -570,7 +570,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_022_Create_Contact_Conflict()
+    public async Task Test_022_Create_Contact_Conflict()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
 
@@ -590,7 +590,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_023_Delete_Contact()
+    public async Task Test_023_Delete_Contact()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
         var id = Guid.NewGuid();
@@ -611,7 +611,7 @@ public class ContactsIntegrationTest : IClassFixture<ContactsIntegrationTestFixt
     }
 
     [Fact]
-    public async void Test_024_Delete_Contact_NotFound()
+    public async Task Test_024_Delete_Contact_NotFound()
     {
         var uow = _fixture.Provider.GetService<IUnitOfWork>();
 

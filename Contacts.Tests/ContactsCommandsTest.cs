@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 using Contacts.Tests.TestInfra;
 using MediatR;
+using System.Threading.Tasks;
 
 namespace Contacts.Tests;
 
@@ -19,7 +20,7 @@ public class ContactsCommandsTest : IClassFixture<ContactsCommandsTestFixture>
     }
 
     [Fact]
-    public async void Test_001_Create_Contact()
+    public async Task Test_001_Create_Contact()
     {
         var mediator = _fixture.Provider.GetService<IMediator>();
         var res = await mediator.Send(new CreateContactCommand
@@ -37,7 +38,7 @@ public class ContactsCommandsTest : IClassFixture<ContactsCommandsTestFixture>
     }
 
     [Fact]
-    public async void Test_002_Delete_Contact()
+    public async Task Test_002_Delete_Contact()
     {
         var mediator = _fixture.Provider.GetService<IMediator>();
         var res =
@@ -48,7 +49,7 @@ public class ContactsCommandsTest : IClassFixture<ContactsCommandsTestFixture>
     }
 
     [Fact]
-    public async void Test_003_UpdateCompany_Contact()
+    public async Task Test_003_UpdateCompany_Contact()
     {
         var mediator = _fixture.Provider.GetService<IMediator>();
         var res =
@@ -69,7 +70,7 @@ public class ContactsCommandsTest : IClassFixture<ContactsCommandsTestFixture>
     }
 
     [Fact]
-    public async void Test_004_UpdateDescription_Contact()
+    public async Task Test_004_UpdateDescription_Contact()
     {
         var mediator = _fixture.Provider.GetService<IMediator>();
         var res =
@@ -85,7 +86,7 @@ public class ContactsCommandsTest : IClassFixture<ContactsCommandsTestFixture>
     }
 
     [Fact]
-    public async void Test_005_UpdateEmail_Contact()
+    public async Task Test_005_UpdateEmail_Contact()
     {
         var mediator = _fixture.Provider.GetService<IMediator>();
         var res =
@@ -101,7 +102,7 @@ public class ContactsCommandsTest : IClassFixture<ContactsCommandsTestFixture>
     }
 
     [Fact]
-    public async void Test_006_UpdateName_Contact()
+    public async Task Test_006_UpdateName_Contact()
     {
         var mediator = _fixture.Provider.GetService<IMediator>();
         var res =
@@ -118,7 +119,7 @@ public class ContactsCommandsTest : IClassFixture<ContactsCommandsTestFixture>
     }
 
     [Fact]
-    public async void Test_007_Read_Contact()
+    public async Task Test_007_Read_Contact()
     {
         var mediator = _fixture.Provider.GetService<IMediator>();
         var res =
@@ -133,7 +134,7 @@ public class ContactsCommandsTest : IClassFixture<ContactsCommandsTestFixture>
     }
 
     [Fact]
-    public async void Test_007_Read_All_Contact()
+    public async Task Test_007_Read_All_Contact()
     {
         var mediator = _fixture.Provider.GetService<IMediator>();
         var res =
