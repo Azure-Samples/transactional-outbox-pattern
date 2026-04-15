@@ -17,6 +17,7 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.Build" Version="18.0.2" />
+      <PackageReference Include="NuGet.Packaging" Version="6.12.5" />
       <ProjectReference Include="..\Contacts.Application\Contacts.Application.csproj" />
       <ProjectReference Include="..\Contacts.Infrastructure\Contacts.Infrastructure.csproj" />
     </ItemGroup>
