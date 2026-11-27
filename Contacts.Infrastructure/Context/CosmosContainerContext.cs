@@ -42,7 +42,7 @@ public class CosmosContainerContext : IContainerContext
 
     public async Task<List<IDataObject<Entity>>> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        RaiseDomainEvents(DataObjects);
+        await RaiseDomainEventsAsync(DataObjects, cancellationToken);
 
         switch (DataObjects.Count)
         {
@@ -153,7 +153,7 @@ public class CosmosContainerContext : IContainerContext
         }
     }
 
-    private void RaiseDomainEvents(List<IDataObject<Entity>> dObjs)
+    private async Task RaiseDomainEventsAsync(List<IDataObject<Entity>> dObjs, CancellationToken cancellationToken)
     {
         var eventEmitters = new List<IEventEmitter<IEvent>>();
 
@@ -165,7 +165,7 @@ public class CosmosContainerContext : IContainerContext
         // Raise Events
         if (eventEmitters.Count <= 0) return;
         foreach (var evt in eventEmitters.SelectMany(eventEmitter => eventEmitter.DomainEvents))
-            _mediator.Publish(evt);
+            await _mediator.Publish(evt, cancellationToken);
     }
 
     private Exception EvaluateCosmosError(CosmosException error, Guid? id = null, string etag = null)
