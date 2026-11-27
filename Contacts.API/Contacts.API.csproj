@@ -17,6 +17,10 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.Build" Version="18.0.2" />
+      <PackageReference Include="Microsoft.OpenApi" Version="2.7.5" />
+      <PackageReference Include="NuGet.Packaging" Version="6.12.5" />
+      <PackageReference Include="NuGet.Protocol" Version="6.12.5" />
+      <PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.21" />
       <ProjectReference Include="..\Contacts.Application\Contacts.Application.csproj" />
       <ProjectReference Include="..\Contacts.Infrastructure\Contacts.Infrastructure.csproj" />
     </ItemGroup>
