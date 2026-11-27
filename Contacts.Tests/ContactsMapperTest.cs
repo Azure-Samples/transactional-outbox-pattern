@@ -65,6 +65,18 @@ public class ContactsMapperTest
     }
 
     [Fact]
+    public void CreateContactDto_MapsAllFields()
+    {
+        var cmd = new CreateContactDto("John", "Doe", "a@b.c", "desc", "Contoso").ToCommand();
+
+        Assert.Equal("John", cmd.FirstName);
+        Assert.Equal("Doe", cmd.LastName);
+        Assert.Equal("a@b.c", cmd.Email);
+        Assert.Equal("desc", cmd.Description);
+        Assert.Equal("Contoso", cmd.CompanyName);
+    }
+
+    [Fact]
     public void UpdateContactCompanyDto_MapsAllFields()
     {
         var cmd = new UpdateContactCompanyDto("Contoso", "Main St", "1", "12345", "Berlin", "DE").ToCommand();
