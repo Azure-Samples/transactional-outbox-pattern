@@ -6,7 +6,7 @@ The source code is structured as follows:
 
 - **Contacts.Domain** - Contact domain logic and interfaces
 - **Contacts.Infrastructure** - Implementation of domain interfaces like repositories
-- **Contacts.Application** - Implementation of CQRS pattern using MediatR library, validation and mapping logic
+- **Contacts.Application** - Implementation of CQRS pattern using MediatR library, validation and explicit DTO mapping logic
 - **Contacts.API** - RESTful API consuming application logic components
 - **Contacts.EventsProcessor** - Console application using the Change Feed Processor library to read the Cosmos DB change feed and publish domain events to Azure Service Bus
 - **Contacts.EventsConsumer** - Function application consuming the ServiceBus topic / messages

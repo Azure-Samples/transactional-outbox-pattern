@@ -3,7 +3,6 @@ using Contacts.API.Middlewares;
 using Contacts.Application.Behaviors;
 using Contacts.Application.Commands;
 using Contacts.Application.Commands.Validators;
-using Contacts.Application.Mapper;
 using Contacts.Domain;
 using Contacts.Domain.Events;
 using Contacts.Infrastructure;
@@ -53,7 +52,6 @@ public class Startup
 
         ContactPartitionKeyProvider partitionKeyProvider = new();
 
-        services.AddAutoMapper(cfg => { }, typeof(ContactsProfile));
         services.AddValidatorsFromAssembly(typeof(CreateContactCommandValidator).Assembly);
 
         services.AddSingleton(container)

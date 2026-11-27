@@ -1,8 +1,8 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
 using Contacts.Application.Commands;
+using Contacts.Application.Mapper;
 using Contacts.Application.Models;
 using Contacts.Application.Queries;
 using Contacts.Application.Queries.Responses;
@@ -16,12 +16,10 @@ namespace Contacts.API.Controllers;
 public class ContactsController : ControllerBase
 {
     private readonly IMediator _mediator;
-    private readonly IMapper _mapper;
 
-    public ContactsController(IMediator mediator, IMapper mapper)
+    public ContactsController(IMediator mediator)
     {
         _mediator = mediator;
-        _mapper = mapper;
     }
 
     [HttpGet("{id:guid}")]
@@ -31,7 +29,7 @@ public class ContactsController : ControllerBase
     {
         var res = await _mediator.Send(new ReadContactQuery { Id = id, Etag = etag },
             cancellationToken);
-        var output = _mapper.Map<ReadContactDto>(res);
+        var output = res.ToDto();
         Response.Headers.Add("ETag", res.Etag);
         return Ok(output);
     }
@@ -44,7 +42,7 @@ public class ContactsController : ControllerBase
     {
         var res = await _mediator.Send(new ReadAllContactsQuery
             { PageSize = pageSize, ContinuationToken = continuationToken }, cancellationToken);
-        var output = _mapper.Map<ReadAllContactsDto>(res);
+        var output = res.ToDto();
         Response.Headers.Add("X-Continuation-Token", res.ContinuationToken);
         return Ok(output);
     }
@@ -53,7 +51,7 @@ public class ContactsController : ControllerBase
     public async Task<ActionResult> CreateContact([FromBody] CreateContactDto dto,
         CancellationToken cancellationToken)
     {
-        var cmd = _mapper.Map<CreateContactCommand>(dto);
+        var cmd = dto.ToCommand();
         var res = await _mediator.Send(cmd, cancellationToken);
         return CreatedAtAction(nameof(GetContact), new { id = res.Id }, null);
     }
@@ -63,7 +61,7 @@ public class ContactsController : ControllerBase
         CancellationToken cancellationToken,
         [FromHeader(Name = "ETag")] string etag = null)
     {
-        var cmd = _mapper.Map<UpdateContactNameCommand>(dto);
+        var cmd = dto.ToCommand();
 
         cmd.Id = id;
         cmd.Etag = etag;
@@ -78,7 +76,7 @@ public class ContactsController : ControllerBase
         CancellationToken cancellationToken,
         [FromHeader(Name = "ETag")] string etag = null)
     {
-        var cmd = _mapper.Map<UpdateContactDescriptionCommand>(dto);
+        var cmd = dto.ToCommand();
 
         cmd.Id = id;
         cmd.Etag = etag;
@@ -93,7 +91,7 @@ public class ContactsController : ControllerBase
         CancellationToken cancellationToken,
         [FromHeader(Name = "ETag")] string etag = null)
     {
-        var cmd = _mapper.Map<UpdateContactEmailCommand>(dto);
+        var cmd = dto.ToCommand();
 
         cmd.Id = id;
         cmd.Etag = etag;
@@ -108,7 +106,7 @@ public class ContactsController : ControllerBase
         CancellationToken cancellationToken,
         [FromHeader(Name = "ETag")] string etag = null)
     {
-        var cmd = _mapper.Map<UpdateContactCompanyCommand>(dto);
+        var cmd = dto.ToCommand();
 
         cmd.Id = id;
         cmd.Etag = etag;
